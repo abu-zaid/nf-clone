@@ -7,10 +7,13 @@ function App() {
     <div className="App">
       <Row
         title="Netflix Top Movies"
-        fetchUrl={requests.fetchNetflixOriginals}
+        fetchURL={requests.fetchNetflixOriginals}
       />
-      <Row title="Trending Now" />
-      <Row title="Action Movies" />
+      <Row title="Trending Now" fetchURL={requests.fetchTrending} />
+      <Row title="Action Movies" fetchURL={requests.fetchActionMovies} />
+      <Row title="Comedy Movies" fetchURL={requests.fetchComedyMovies} />
+      <Row title="Top Rated" fetchURL={requests.fetchTopRated} />
+      <Row title="Documentaires" fetchURL={requests.fetchDocumentaries} />
     </div>
   );
 }
