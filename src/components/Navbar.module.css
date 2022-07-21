@@ -1,0 +1,28 @@
+.navbar__userlogo {
+  width: 30px;
+  position: fixed;
+  right: 20px;
+  object-fit: contain;
+}
+.navbar__logo {
+  width: 85px;
+  left: 20px;
+  object-fit: contain;
+  position: fixed;
+}
+.navbar {
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  top: 0;
+  z-index: 1;
+  height: 30px;
+  display: flex;
+  position: fixed;
+  height: 30px;
+  transition: ease-in-out 200ms;
+}
+
+.navbar__bg {
+  background-color: #111;
+}
