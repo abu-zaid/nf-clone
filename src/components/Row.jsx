@@ -9,6 +9,17 @@ const IMG_URL = "https://image.tmdb.org/t/p/w500";
 const Row = (props) => {
   const [trailerURL, setTrailerURL] = useState("");
   const [movies, setMovies] = useState([]);
+  const [headerMovie, setHeaderMovie] = useState([]);
+
+  const headerHandler = (movie) => {
+    setHeaderMovie({
+      name: movie.title,
+      key: movie.id,
+      description: movie.overview,
+      image: movie.backdrop_path,
+    });
+    console.log(headerMovie);
+  };
 
   const trailerHandler = (movie) => {
     if (trailerURL) {
@@ -57,7 +68,10 @@ const Row = (props) => {
         {movies.map((movie) => {
           return (
             <img
-              onClick={() => trailerHandler(movie)}
+              onClick={() => {
+                trailerHandler(movie);
+                headerHandler(movie);
+              }}
               key={movie?.id}
               src={`${IMG_URL}${
                 props.posterBoy ? movie?.poster_path : movie?.backdrop_path

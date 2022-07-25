@@ -8,18 +8,20 @@ const IMG_URL = "https://image.tmdb.org/t/p/original";
 const Header = (props) => {
   const [movie, setMovie] = useState([]);
 
-  useEffect(() => {
-    async function fetchData() {
-      const request = await axios.get(props.fetchURL);
-      setMovie(
-        request.data.results[
-          Math.floor(Math.random() * request.data.results.length - 1)
-        ]
-      );
-      return request;
-    }
-    fetchData();
-  }, [props.fetchURL]);
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const request = await axios.get(props.fetchURL);
+  //     setMovie(
+  //       request.data.results[
+  //         Math.floor(Math.random() * request.data.results.length - 1)
+  //       ]
+  //     );
+  //     return request;
+  //   }
+  //   fetchData();
+  // }, [props.fetchURL]);
+
+  
 
   return (
     <div className={styles.header__overlay}>
